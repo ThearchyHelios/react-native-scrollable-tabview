@@ -63,6 +63,7 @@ export default class ScrollableTabView extends React.Component {
     onScroll: PropTypes.func,
     onScroll2Horizontal: PropTypes.func,
     screenScrollThrottle: PropTypes.number,
+    horizontalScrollEnabled: PropTypes.bool,
     errorToThrow: PropTypes.bool
   };
 
@@ -109,6 +110,7 @@ export default class ScrollableTabView extends React.Component {
     onScroll: null,
     onScroll2Horizontal: null,
     screenScrollThrottle: 60,
+    horizontalScrollEnabled: true,
     errorToThrow: false
   };
 
@@ -774,6 +776,7 @@ export default class ScrollableTabView extends React.Component {
                 onScrollIndexChanged={this._throttleCallback}
                 firstItem={this.state.checkedIndex}
                 onScroll={this._onScrollHandler2Horizontal}
+                scrollEnabled={this.props.horizontalScrollEnabled}
                 {...carouselProps}
               />
             );
